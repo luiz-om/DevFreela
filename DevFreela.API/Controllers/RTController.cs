@@ -38,13 +38,13 @@ namespace DevFreela.API.Controllers
         [HttpGet("teste")]
         public async Task<IActionResult> Teste()
         {
-            return Ok(car.todos());
+            return   Ok(car.todos());
         }
 
         [HttpGet("teste/{id}")]
         public async Task<IActionResult> ById(int id)
         {
-            return Ok(car.todos().Find(x => x.Id == id));
+            return Ok  (car.todos().Find(x => x.Id == id));
         }
     }
 }

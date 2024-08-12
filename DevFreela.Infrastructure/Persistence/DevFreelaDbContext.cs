@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DevFreela.API.Entities;
+using DevFreela.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DevFreela.API.Persistence
+namespace DevFreela.Infrastructure.Persistence
 {
     public class DevFreelaDbContext(DbContextOptions<DevFreelaDbContext> options) : DbContext(options)
     {
@@ -40,7 +40,13 @@ namespace DevFreela.API.Persistence
                         .WithMany(p => p.Comments)
                         .HasForeignKey(p => p.IdProject)
                         .OnDelete(DeleteBehavior.Restrict);
+                    
+                    e.HasOne(p => p.User)
+                        .WithMany(p => p.Comments)
+                        .HasForeignKey(p => p.IdUser)
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
+            
 
             builder
                 .Entity<User>(e =>
