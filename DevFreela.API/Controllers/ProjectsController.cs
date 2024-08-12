@@ -18,7 +18,7 @@ namespace DevFreela.API.Controllers
 
         // get api/projects/search=crm
         [HttpGet]
-        public IActionResult Get(string search = "")
+        public IActionResult GetAll(string search = "")
         {
             var result = _service.GetAll();
             return Ok(result);
