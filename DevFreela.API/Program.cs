@@ -1,5 +1,5 @@
 using DevFreela.API.ExceptionHandler;
-using DevFreela.API.Models;
+using DevFreela.Application.Models;
 using DevFreela.API.Services;
 using DevFreela.Application;
 using DevFreela.Application.Models;
